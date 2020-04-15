@@ -8,26 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		7A065F4124463E520011F21A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A065F4024463E520011F21A /* AppDelegate.m */; };
-		7A065F4424463E520011F21A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A065F4324463E520011F21A /* ViewController.m */; };
 		7A065F4724463E520011F21A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A065F4524463E520011F21A /* Main.storyboard */; };
 		7A065F4A24463E520011F21A /* Library.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A065F4824463E520011F21A /* Library.xcdatamodeld */; };
 		7A065F4C24463E550011F21A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A065F4B24463E550011F21A /* Assets.xcassets */; };
 		7A065F4F24463E550011F21A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A065F4D24463E550011F21A /* LaunchScreen.storyboard */; };
 		7A065F5224463E550011F21A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A065F5124463E550011F21A /* main.m */; };
+		7A065F5A244648580011F21A /* RootTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A065F59244648580011F21A /* RootTableTableViewController.m */; };
+		7A065F5D2446486D0011F21A /* SecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A065F5C2446486D0011F21A /* SecondTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7A065F3C24463E520011F21A /* Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Library.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A065F3F24463E520011F21A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7A065F4024463E520011F21A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7A065F4224463E520011F21A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7A065F4324463E520011F21A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7A065F4624463E520011F21A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A065F4924463E520011F21A /* Library.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Library.xcdatamodel; sourceTree = "<group>"; };
 		7A065F4B24463E550011F21A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A065F4E24463E550011F21A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A065F5024463E550011F21A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A065F5124463E550011F21A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7A065F58244648580011F21A /* RootTableTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootTableTableViewController.h; sourceTree = "<group>"; };
+		7A065F59244648580011F21A /* RootTableTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootTableTableViewController.m; sourceTree = "<group>"; };
+		7A065F5B2446486D0011F21A /* SecondTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondTableViewController.h; sourceTree = "<group>"; };
+		7A065F5C2446486D0011F21A /* SecondTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,14 +65,16 @@
 			children = (
 				7A065F3F24463E520011F21A /* AppDelegate.h */,
 				7A065F4024463E520011F21A /* AppDelegate.m */,
-				7A065F4224463E520011F21A /* ViewController.h */,
-				7A065F4324463E520011F21A /* ViewController.m */,
 				7A065F4524463E520011F21A /* Main.storyboard */,
 				7A065F4B24463E550011F21A /* Assets.xcassets */,
 				7A065F4D24463E550011F21A /* LaunchScreen.storyboard */,
 				7A065F5024463E550011F21A /* Info.plist */,
 				7A065F5124463E550011F21A /* main.m */,
 				7A065F4824463E520011F21A /* Library.xcdatamodeld */,
+				7A065F58244648580011F21A /* RootTableTableViewController.h */,
+				7A065F59244648580011F21A /* RootTableTableViewController.m */,
+				7A065F5B2446486D0011F21A /* SecondTableViewController.h */,
+				7A065F5C2446486D0011F21A /* SecondTableViewController.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -144,10 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A065F4424463E520011F21A /* ViewController.m in Sources */,
+				7A065F5A244648580011F21A /* RootTableTableViewController.m in Sources */,
 				7A065F4124463E520011F21A /* AppDelegate.m in Sources */,
 				7A065F5224463E550011F21A /* main.m in Sources */,
 				7A065F4A24463E520011F21A /* Library.xcdatamodeld in Sources */,
+				7A065F5D2446486D0011F21A /* SecondTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +298,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68XZ6G8FMQ;
 				INFOPLIST_FILE = Library/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +316,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68XZ6G8FMQ;
 				INFOPLIST_FILE = Library/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
