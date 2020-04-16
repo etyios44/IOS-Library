@@ -18,8 +18,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    animals = [NSArray arrayWithObjects:@"Dogs",@"Cats",@"Frogs",@"Gnats", nil];
+    //animals = [NSArray arrayWithObjects:@"Dogs",@"Cats",@"Frogs",@"Gnats", nil];
 
+    ////
+    
+    NSLog(@"\n\nGetting a Directory File Listing\n");
+    NSFileManager *filemgr;
+    NSArray *filelist;
+    int c;
+    int i;
+    
+    filemgr = [NSFileManager defaultManager];
+    
+    filelist = [filemgr contentsOfDirectoryAtPath: @"/tmp" error: nil];
+    
+    c = [filelist count] ;
+    
+    for (i = 0; i < c; i++)
+        NSLog (@"%@", [filelist objectAtIndex: i]);
+    
+    animals = filelist;
+    
+    ////
+    
 }
 
 #pragma mark - Table view data source
