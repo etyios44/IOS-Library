@@ -27,11 +27,12 @@
     NSArray *filelist;
     int c;
     int i;
+    NSString *currentpath;
     
     filemgr = [NSFileManager defaultManager];
-    
-    filelist = [filemgr contentsOfDirectoryAtPath: @"/tmp" error: nil];
-    
+    currentpath = [filemgr currentDirectoryPath];
+    //filelist = [filemgr contentsOfDirectoryAtPath: @"/tmp" error: nil];
+    filelist = [filemgr contentsOfDirectoryAtPath:currentpath error: nil];
     c = [filelist count] ;
     
     for (i = 0; i < c; i++)
