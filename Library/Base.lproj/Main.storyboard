@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Animals-->
+        <!--Files-->
         <scene sceneID="GMD-A1-oHg">
             <objects>
                 <tableViewController id="Aw1-lA-dPc" customClass="RootTableTableViewController" sceneMemberID="viewController">
@@ -35,7 +35,7 @@
                             <outlet property="delegate" destination="Aw1-lA-dPc" id="MYV-fV-Dsl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Animals" id="wdi-j4-6N9"/>
+                    <navigationItem key="navigationItem" title="Files" id="wdi-j4-6N9"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJU-59-Nur" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

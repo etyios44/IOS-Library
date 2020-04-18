@@ -8,26 +8,29 @@
 
 #import "SecondTableViewController.h"
 
-@interface SecondTableViewController ()
+@interface SecondTableViewController () {
 
+        NSArray *listAttrib;
+        NSDictionary *attribs;
+}
 @end
 
 @implementation SecondTableViewController {
     
     NSArray *filelist;
-    
+    NSString *currentpath;
+    int nb;
+    NSString *existingVariable ;
+    NSFileManager *filemgr;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSLog(@"\n\nGetting a Directory File Listing\n");
-    NSFileManager *filemgr;
+
     int c;
     int i;
-    
+
     filemgr = [NSFileManager defaultManager];
-    
     filelist = [filemgr contentsOfDirectoryAtPath: @"/tmp" error: nil];
     
     c = [filelist count] ;
@@ -35,6 +38,17 @@
     for (i = 0; i < c; i++)
         NSLog (@"%@", [filelist objectAtIndex: i]);
     
+    listAttrib = [NSArray arrayWithObjects:@"NSFileCreationDate",@"NSFileImmutable",@"NSFileAppendOnly",@"NSFileOwnerAccountID",@"NSFileGroupOwnerAccountID",@"NSFileSize",@"NSFileModificationDate",@"NSFileReferenceCount",@"NSFileOwnerAccountName",@"NSFileGroupOwnerAccountName",@"NSFilePosixPermissions",@"NSFileSystemNumber",@"NSFileSystemFileNumber",@"NSFileExtensionHidden",@"NSFileTypeRegular",@"NSFileTypeSymbolicLink",@"NSFileTypeSocket",@"NSFileTypeCharacterSpecial",@"NSFileTypeBlockSpecial",@"NSFileTypeUnknown",@"NSFileDeviceIdentifier",@"NSFileHFSCreatorCode",@"NSFileHFSTypeCode", nil];
+
+    nb = [listAttrib count];
+    
+    i = 0;
+    for (existingVariable in listAttrib) {
+        NSString *labAttrib;
+        labAttrib = [attribs objectForKey: existingVariable];
+        NSLog (@"%i - %@ on : %@", i, existingVariable, labAttrib);
+        i++;
+    }
 }
 
 #pragma mark - Table view data source
@@ -44,11 +58,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return 3;
-     
+    //return 4;
+    return nb;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
@@ -59,38 +71,28 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    
-    NSLog(@"\n\nGetting the Attributes of a File or Directory\n");
-    
-    NSDictionary *attribs;
-    NSFileManager *filemgr;
 
     filemgr = [NSFileManager defaultManager];
+    currentpath = [filemgr currentDirectoryPath];
     
     //attribs = [filemgr attributesOfItemAtPath: @"/tmp" error: NULL];
     attribs = [filemgr attributesOfItemAtPath: _fileName error: NULL];
     
-    NSLog (@"Created on %@", [attribs objectForKey: NSFileCreationDate]);
-    NSLog (@"File type %@", [attribs objectForKey: NSFileType]);
-    NSLog (@"POSIX Permissions %@", [attribs objectForKey: NSFilePosixPermissions]);
-    
-    /*
-    cell.textLabel.text = [NSString stringWithFormat:@"%@\n%@\n%@",
-                           [attribs objectForKey: NSFileCreationDate],
-                           [attribs objectForKey: NSFileType],
-                           [attribs objectForKey: NSFilePosixPermissions]];
-    */
-    if (indexPath.row == 0) {
-        cell.textLabel.text = [NSString stringWithFormat:@"NSFileCreationDate : %@",
-                           [attribs objectForKey: NSFileCreationDate]];
-    } else if (indexPath.row == 1) {
-        cell.textLabel.text = [NSString stringWithFormat:@"NSFileType : %@",
-                        [attribs objectForKey: NSFileType]];
-    } else if (indexPath.row == 2) {
-        cell.textLabel.text = [NSString stringWithFormat:@"NSFilePosixPermissions : %@",
-                               [attribs objectForKey: NSFilePosixPermissions]];
+    NSString *res;
+    for (int j=0;j<nb;j++) {
+        if (indexPath.row == j) {
+            //existingVariable = listAttrib[20];
+            existingVariable = listAttrib[(int)indexPath.row];
+            NSLog(@"indexPath.row : %i, %@", (int)indexPath.row, existingVariable);
+            res = [attribs objectForKey: existingVariable];
+            if (!res) {
+                cell.textLabel.text = @"";
+            } else {
+                cell.textLabel.text = [NSString stringWithFormat:@"%@ : %@", existingVariable, [attribs objectForKey: existingVariable]];
+            }
+        }
     }
-     NSLog (@"test %@", cell.textLabel.text);
+
     return cell;
 }
 
