@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SecondTableViewController : UITableViewController
 
-@property (nonatomic,strong) NSString *animalName;
+@property (nonatomic,strong) NSString *fileName;
 
 @end
 

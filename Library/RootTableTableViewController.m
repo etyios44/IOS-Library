@@ -10,7 +10,7 @@
 #import "SecondTableViewController.h"
 
 @interface RootTableTableViewController () {
-    NSArray *animals;
+    NSArray *files;
 }
 @end
 
@@ -18,10 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //animals = [NSArray arrayWithObjects:@"Dogs",@"Cats",@"Frogs",@"Gnats", nil];
 
-    ////
-    
     NSLog(@"\n\nGetting a Directory File Listing\n");
     NSFileManager *filemgr;
     NSArray *filelist;
@@ -31,16 +28,14 @@
     
     filemgr = [NSFileManager defaultManager];
     currentpath = [filemgr currentDirectoryPath];
-    //filelist = [filemgr contentsOfDirectoryAtPath: @"/tmp" error: nil];
+
     filelist = [filemgr contentsOfDirectoryAtPath:currentpath error: nil];
     c = [filelist count] ;
     
     for (i = 0; i < c; i++)
         NSLog (@"%@", [filelist objectAtIndex: i]);
     
-    animals = filelist;
-    
-    ////
+    files = filelist;
     
 }
 
@@ -53,7 +48,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [animals count];
+    return [files count];
 }
 
 
@@ -66,7 +61,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [animals  objectAtIndex:indexPath.row];
+    cell.textLabel.text = [files  objectAtIndex:indexPath.row];
      return cell;
 }
 
@@ -74,8 +69,8 @@
     if ([segue.identifier isEqualToString:@"showArrayDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         SecondTableViewController *destViewController = segue.destinationViewController;
-        destViewController.animalName = [animals objectAtIndex:indexPath.row];
-        destViewController.title = destViewController.animalName;
+        destViewController.fileName = [files objectAtIndex:indexPath.row];
+        destViewController.title = destViewController.fileName;
     }
 
 }
