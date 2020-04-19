@@ -25,32 +25,26 @@
     int c;
     int i;
     NSString *currentpath;
-    
     filemgr = [NSFileManager defaultManager];
-    currentpath = [filemgr currentDirectoryPath];
-
+    NSString *myHome = NSHomeDirectory();
+    currentpath = myHome;
+    NSLog (@"currentpath : %@",currentpath);
     filelist = [filemgr contentsOfDirectoryAtPath:currentpath error: nil];
     c = [filelist count] ;
-    
     for (i = 0; i < c; i++)
-        NSLog (@"%@", [filelist objectAtIndex: i]);
-    
+        NSLog (@"filelist : %@", [filelist objectAtIndex: i]);
     files = filelist;
-        
+    
 }
 
-#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     return [files count];
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
  
