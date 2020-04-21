@@ -15,6 +15,8 @@
 		7A065F5224463E550011F21A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A065F5124463E550011F21A /* main.m */; };
 		7A065F5A244648580011F21A /* RootTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A065F59244648580011F21A /* RootTableTableViewController.m */; };
 		7A065F5D2446486D0011F21A /* SecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A065F5C2446486D0011F21A /* SecondTableViewController.m */; };
+		7A4C67F6244EF62700FF3470 /* FileChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4C67F5244EF62600FF3470 /* FileChoiceViewController.m */; };
+		7A4C67F9244EF63700FF3470 /* Connector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4C67F8244EF63700FF3470 /* Connector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,10 @@
 		7A065F59244648580011F21A /* RootTableTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootTableTableViewController.m; sourceTree = "<group>"; };
 		7A065F5B2446486D0011F21A /* SecondTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondTableViewController.h; sourceTree = "<group>"; };
 		7A065F5C2446486D0011F21A /* SecondTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondTableViewController.m; sourceTree = "<group>"; };
+		7A4C67F4244EF62600FF3470 /* FileChoiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileChoiceViewController.h; sourceTree = "<group>"; };
+		7A4C67F5244EF62600FF3470 /* FileChoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileChoiceViewController.m; sourceTree = "<group>"; };
+		7A4C67F7244EF63700FF3470 /* Connector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Connector.h; sourceTree = "<group>"; };
+		7A4C67F8244EF63700FF3470 /* Connector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Connector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,10 @@
 				7A065F59244648580011F21A /* RootTableTableViewController.m */,
 				7A065F5B2446486D0011F21A /* SecondTableViewController.h */,
 				7A065F5C2446486D0011F21A /* SecondTableViewController.m */,
+				7A4C67F4244EF62600FF3470 /* FileChoiceViewController.h */,
+				7A4C67F5244EF62600FF3470 /* FileChoiceViewController.m */,
+				7A4C67F7244EF63700FF3470 /* Connector.h */,
+				7A4C67F8244EF63700FF3470 /* Connector.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -149,10 +159,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A4C67F9244EF63700FF3470 /* Connector.m in Sources */,
 				7A065F5A244648580011F21A /* RootTableTableViewController.m in Sources */,
 				7A065F4124463E520011F21A /* AppDelegate.m in Sources */,
 				7A065F5224463E550011F21A /* main.m in Sources */,
 				7A065F4A24463E520011F21A /* Library.xcdatamodeld in Sources */,
+				7A4C67F6244EF62700FF3470 /* FileChoiceViewController.m in Sources */,
 				7A065F5D2446486D0011F21A /* SecondTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

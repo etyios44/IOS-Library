@@ -11,14 +11,18 @@
 
 @interface RootTableTableViewController () {
     NSArray *files;
+    NSString *label;
 }
 @end
 
 @implementation RootTableTableViewController
+@synthesize connectorClass;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    label = connectorClass.stringBeingPassed;
+    NSLog(@"label : %@, secondString : %@", label, connectorClass.secondString);
+    
     NSLog(@"\n\nGetting a Directory File Listing\n");
     NSFileManager *filemgr;
     NSArray *filelist;
@@ -29,7 +33,8 @@
     NSString *myHome = NSHomeDirectory();
     currentpath = myHome;
     NSLog (@"currentpath : %@",currentpath);
-    filelist = [filemgr contentsOfDirectoryAtPath:currentpath error: nil];
+    //filelist = [filemgr contentsOfDirectoryAtPath:currentpath error: nil];
+    filelist = [filemgr contentsOfDirectoryAtPath:label error: nil];
     c = [filelist count] ;
     for (i = 0; i < c; i++)
         NSLog (@"filelist : %@", [filelist objectAtIndex: i]);
